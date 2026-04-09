@@ -1,0 +1,21 @@
+{
+  "name": "smart-scanner-legal-site",
+  "version": "1.0.0",
+  "description": "Smart Scanner website with Privacy Policy and Terms of Service pages",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "smart-scanner",
+    "privacy-policy",
+    "terms-of-service",
+    "express"
+  ],
+  "author": "Smart Scanner",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
