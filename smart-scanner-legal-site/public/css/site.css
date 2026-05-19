@@ -23,6 +23,7 @@ body {
 }
 
 body {
+  min-height: 100vh;
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
   background:
     radial-gradient(circle at top left, rgba(123, 167, 255, 0.14), transparent 25%),
@@ -37,12 +38,20 @@ a {
   text-decoration: none;
 }
 
+/* Important: prevents images from becoming full screen */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .container {
   width: 100%;
   max-width: var(--maxw);
   margin: 0 auto;
   padding: 0 20px;
 }
+
+/* Header */
 
 .site-header {
   position: sticky;
@@ -61,40 +70,59 @@ a {
   gap: 16px;
 }
 
+/* Logo + app name */
+
 .brand {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  flex-shrink: 0;
   font-size: 1.05rem;
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--text);
+  white-space: nowrap;
+}
+
+.brand:hover {
+  text-decoration: none;
 }
 
 .brand-logo {
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 34px;
+  min-height: 34px;
+  max-width: 34px !important;
+  max-height: 34px !important;
+  display: block;
   object-fit: contain;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--line);
+  border-radius: 10px;
   padding: 4px;
   flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--line);
 }
+
+/* Navigation */
 
 .nav-links {
   display: flex;
+  align-items: center;
   gap: 18px;
   flex-wrap: wrap;
 }
 
 .nav-links a {
   color: var(--muted);
+  font-size: 0.95rem;
 }
 
 .nav-links a:hover {
   color: var(--text);
 }
+
+/* Hero */
 
 .hero {
   padding: 80px 0 48px;
@@ -165,6 +193,8 @@ a {
   color: var(--text);
 }
 
+/* Cards */
+
 .hero-card,
 .feature-card,
 .info-box {
@@ -201,6 +231,8 @@ a {
   color: var(--muted);
 }
 
+/* Info section */
+
 .info-section {
   padding: 20px 0 70px;
 }
@@ -227,6 +259,8 @@ a {
   color: var(--muted);
 }
 
+/* Footer */
+
 .site-footer {
   border-top: 1px solid var(--line);
   background: rgba(8, 12, 24, 0.9);
@@ -252,6 +286,8 @@ a {
   color: var(--text);
 }
 
+/* Tablet */
+
 @media (max-width: 920px) {
   .hero-inner,
   .info-grid {
@@ -263,13 +299,32 @@ a {
   }
 }
 
+/* Mobile */
+
 @media (max-width: 640px) {
   .container {
     padding: 0 14px;
   }
 
   .nav {
-    min-height: 64px;
+    min-height: auto;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .brand-logo {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px;
+    min-height: 32px;
+    max-width: 32px !important;
+    max-height: 32px !important;
+  }
+
+  .nav-links {
+    gap: 12px;
   }
 
   .hero-copy h1 {
