@@ -75,13 +75,15 @@ img {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  gap: 14px;
   flex-shrink: 0;
   font-size: 1.05rem;
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--text);
   white-space: nowrap;
+  line-height: 1;
 }
 
 .brand:hover {
@@ -103,7 +105,11 @@ img {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid var(--line);
 }
-
+.brand span {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
 /* Navigation */
 
 .nav-links {
